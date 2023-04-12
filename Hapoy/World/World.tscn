@@ -1,0 +1,232 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Photo/BackGround.png" type="Texture" id=1]
+[ext_resource path="res://Photo/PixselPrint.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://User/User.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/CameraCode.gd" type="Script" id=4]
+[ext_resource path="res://Thorn/Thorn.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BackGround/Info:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.4, 0.4 ), Vector2( 0.3, 0.3 ), Vector2( 0.5, 0.5 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 2 )
+
+[node name="World" type="Node2D"]
+position = Vector2( 160, 120 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Idle = SubResource( 2 )
+
+[node name="BodyMap" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionPolygon2D" parent="BodyMap"]
+visible = false
+polygon = PoolVector2Array( -160, -128, -160, 120, 160, 120, 160, -119, -152, -120, -152, -128, 168, -128, 168, 128, -168, 128, -168, -128 )
+
+[node name="BackGround" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Info" type="Label" parent="BackGround"]
+margin_left = -800.0
+margin_top = -600.0
+margin_right = 799.0
+margin_bottom = 598.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 800, 600 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Hapoy Game Menu
+Tap Enter to start Happy Game
+Tap R to reload"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="User" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera" type="Camera2D" parent="."]
+visible = false
+rotating = true
+current = true
+zoom = Vector2( 2, 2 )
+script = ExtResource( 4 )
+
+[node name="Thorn2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -138, 115 )
+
+[node name="Thorn3" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 14, 0 )
+
+[node name="Thorn4" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 28, 0 )
+
+[node name="Thorn5" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 42, 0 )
+
+[node name="Thorn6" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 55, 0 )
+
+[node name="Thorn7" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 69, 0 )
+
+[node name="Thorn8" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 207, 0 )
+
+[node name="Thorn9" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 221, 0 )
+
+[node name="Thorn10" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 235, 0 )
+
+[node name="Thorn11" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 249, 0 )
+
+[node name="Thorn12" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 263, 0 )
+
+[node name="Thorn13" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 276, 0 )
+
+[node name="Thorn14" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 290, 0 )
+
+[node name="Thorn15" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( -14, -229 )
+rotation = -3.14159
+
+[node name="Thorn16" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 0, -229 )
+rotation = -3.14159
+
+[node name="Thorn17" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 14, -229 )
+rotation = -3.14159
+
+[node name="Thorn18" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 28, -229 )
+rotation = -3.14159
+
+[node name="Thorn19" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 42, -229 )
+rotation = -3.14159
+
+[node name="Thorn20" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 55, -229 )
+rotation = -3.14159
+
+[node name="Thorn21" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 69, -229 )
+rotation = -3.14159
+
+[node name="Thorn29" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( -16, -118 )
+rotation = 1.5708
+
+[node name="Thorn30" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( -16, -133 )
+rotation = 1.5708
+
+[node name="Thorn31" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( -16, -147 )
+rotation = 1.5708
+
+[node name="Thorn32" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( -16, -104 )
+rotation = 1.5708
+
+[node name="Thorn33" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( -16, -161 )
+rotation = 1.5708
+
+[node name="Thorn34" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( -16, -91 )
+rotation = 1.5708
+
+[node name="Thorn35" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( -16, -78 )
+rotation = 1.5708
+
+[node name="Thorn36" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 292, -110 )
+rotation = -1.5708
+
+[node name="Thorn37" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 292, -125 )
+rotation = -1.5708
+
+[node name="Thorn38" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 292, -139 )
+rotation = -1.5708
+
+[node name="Thorn39" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 292, -96 )
+rotation = -1.5708
+
+[node name="Thorn40" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 292, -153 )
+rotation = -1.5708
+
+[node name="Thorn41" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 292, -83 )
+rotation = -1.5708
+
+[node name="Thorn42" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 292, -70 )
+rotation = -1.5708
+
+[node name="Thorn22" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 207, -229 )
+rotation = -3.14159
+
+[node name="Thorn23" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 221, -229 )
+rotation = -3.14159
+
+[node name="Thorn24" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 235, -229 )
+rotation = -3.14159
+
+[node name="Thorn25" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 249, -229 )
+rotation = -3.14159
+
+[node name="Thorn26" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 263, -229 )
+rotation = -3.14159
+
+[node name="Thorn27" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 276, -229 )
+rotation = -3.14159
+
+[node name="Thorn28" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( 290, -229 )
+rotation = -3.14159
+
+[node name="Thorn2" parent="Thorn2" instance=ExtResource( 5 )]
+position = Vector2( -14, 0 )
